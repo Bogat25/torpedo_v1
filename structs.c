@@ -7,7 +7,11 @@ typedef struct
 {
     int el;
     int matrix[tabla_meret][tabla_meret];
-} player;
+} players;
 
+typedef struct
+{
+    int elet; //az elet egyben a hossz-t is meghatarozza
+} torpedo_1_hosszu;
 
 #endif

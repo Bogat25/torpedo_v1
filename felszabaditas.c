@@ -4,8 +4,8 @@
 #include "defines.c"
 #include "structs.c"
 
-void felszabaditas_jatekosok(player* players){
-    free(players);
+void felszabaditas_jatekosok(players* player){
+    free(player);
 }
 
 

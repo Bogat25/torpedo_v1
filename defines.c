@@ -13,5 +13,6 @@
 
 #define tabla_meret 8
 #define db_jatekos 2
+#define terkoz 10
 
 #endif

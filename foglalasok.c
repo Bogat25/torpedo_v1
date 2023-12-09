@@ -5,8 +5,8 @@
 #include "defines.c"
 #include "structs.c"
 
-player* foglalas_jatekosok(){
-    return (player*)calloc(db_jatekos , sizeof(player));
+players* foglalas_jatekosok(){
+    return (players*)calloc(db_jatekos , sizeof(players));
 }
 
 #endif
