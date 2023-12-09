@@ -5,6 +5,7 @@
 
 typedef struct
 {
+    char nev[10];
     int el;
     int matrix[tabla_meret][tabla_meret];
 } players;
