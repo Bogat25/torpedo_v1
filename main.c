@@ -8,6 +8,7 @@
 #include "felszabaditas.c"
 #include "print.c"
 #include "scan.c"
+#include "hajo_helyvalasztas.c"
 
 
 
@@ -18,16 +19,12 @@ int main(){
     sc_nevek(player);
     int jatekban = 1;
     while (jatekban == 1){
-        
-    }
-    
-
-
-
     player[1].matrix[2][2] = 1; //teszt
-    player[0].matrix[2][2] = 3; 
+    player[0].matrix[2][2] = 3;
+    hajo_helyvalasztas(player);
     pr_tabla(player);
-
+    break; //a teszt erejéig
+    }
     felszabaditas_jatekosok(player);
 }
 
