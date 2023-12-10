@@ -7,12 +7,14 @@ typedef struct
 {
     char nev[10];
     int el;
-    int matrix[tabla_meret][tabla_meret];
+    int matrix[tabla_meret + 2][tabla_meret + 2];
 } players;
 
 typedef struct
 {
-    int elet; //az elet egyben a hossz-t is meghatarozza
-} torpedo_1_hosszu;
+    int meret_elet;
+    int kezdopont[2]; //x,y kordinata
+    int irany; // 0 = visszintes, 1 = fuggoleges
+} hajok;
 
 #endif

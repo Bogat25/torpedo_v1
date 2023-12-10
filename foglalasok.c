@@ -9,4 +9,8 @@ players* foglalas_jatekosok(){
     return (players*)calloc(db_jatekos , sizeof(players));
 }
 
+hajok* foglalas_hajok(){
+    return (hajok*)calloc(1,sizeof(hajok));
+}
+
 #endif

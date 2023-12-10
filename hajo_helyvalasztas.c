@@ -5,79 +5,92 @@
 
 void hajo_helyvalasztas(players *player)
 {
-    for (int i = 0; i < db_jatekos; i++)
+
+    hajok *hajo_1_player_1 = foglalas_hajok();
+    hajok *hajo_2_player_1 = foglalas_hajok();
+    hajok *hajo_3_player_1 = foglalas_hajok();
+    hajok *hajo_4_player_1 = foglalas_hajok();
+    hajok *hajo_5_player_1 = foglalas_hajok();
+
+    hajok *hajo_1_player_2 = foglalas_hajok();
+    hajok *hajo_2_player_2 = foglalas_hajok();
+    hajok *hajo_3_player_2 = foglalas_hajok();
+    hajok *hajo_4_player_2 = foglalas_hajok();
+    hajok *hajo_5_player_2 = foglalas_hajok();
+
+    hajo_1_player_1->meret_elet = 1;
+    hajo_1_player_2->meret_elet = 1;
+    hajo_2_player_1->meret_elet = 2;
+    hajo_2_player_2->meret_elet = 2;
+    hajo_3_player_1->meret_elet = 3;
+    hajo_3_player_2->meret_elet = 3;
+    hajo_4_player_1->meret_elet = 4;
+    hajo_4_player_2->meret_elet = 4;
+    hajo_5_player_1->meret_elet = 5;
+    hajo_5_player_2->meret_elet = 5;
+
+    int kilepes = 0;
+    printf("Kerem %s jatekos hajo kordinatait.\n");
+    while (kilepes != 1)
     {
-        for (int hajo_meret = 5; hajo_meret > 0; hajo_meret--)
+        printf(YELLOW_TEXT "1 egysegnyi hajo.\n");
+        printf(RESET_TEXT);
+        hajo_1_player_1->kezdopont[0] = 0;
+        while (hajo_1_player_1->kezdopont[0] < 1 || hajo_1_player_1->kezdopont[1] > tabla_meret)
         {
-            int hajo_lerakhato = 0;
-            while (hajo_lerakhato != 1)
+            printf("X: ");
+            scanf("%d", &hajo_1_player_1->kezdopont[0]);
+        }
+        hajo_1_player_1->kezdopont[1] = 0;
+        while (hajo_1_player_1->kezdopont[1] < 1 || hajo_1_player_1->kezdopont[1] > tabla_meret)
+        {
+            printf("Y: ");
+            scanf("%d", &hajo_1_player_1->kezdopont[1]);
+        }
+        printf(CYAN_TEXT "\nA halyo beolvasasa sikeres volt.\n");
+        printf(RESET_TEXT);
+
+        int kilepes_2 = 0;
+        while (kilepes_2 != 1)
+        {
+            hajo_2_player_1->kezdopont[0] = 0;
+            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
             {
-                printf("A(z) %d egyseg hosszu hajo helyzete/iranya:\n", hajo_meret);
-                int x = 0;
-                int y = 0;
-                int irany = -1;
                 printf("X: ");
-                scanf("%d", &x);
-                printf("Y: ");
-                scanf("%d", &y);
-                while (irany < 0 || irany > 1)
+                scanf("%d", &hajo_2_player_1->kezdopont[0]);
+            }
+            hajo_2_player_1->kezdopont[1] = 0;
+            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
+            {
+                printf("X: ");
+                scanf("%d", &hajo_2_player_1->kezdopont[0]);
+            }
+            hajo_2_player_1->irany = 0;
+            while (hajo_1_player_1->irany < 0 || hajo_2_player_1->irany > 1)
+            {
+                printf("Irany: ");
+                scanf("%d", &hajo_2_player_1->irany);
+            }
+            int utkozes = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int n = 0; i < hajo_2_player_1->meret_elet; i++)
                 {
-                    printf("Irany (0 = visszintes, 1 = fuggoleges): ");
-                    scanf("%d", &irany);
-                }
-
-                if (x > tabla_meret || x < 0 || y > tabla_meret || y < 0)
-                {
-                    printf(RED_TEXT "Rossz helyre lett megadva a kezdopont.\n");
-                    printf(RESET_TEXT);
-                    hajo_meret++;
-                    break;
-                }
-                if (irany == 0 && y + hajo_meret > tabla_meret || irany == 1 && x + hajo_meret > tabla_meret)
-                {
-                    printf(RED_TEXT "A hajo kilog a palyarol.\n");
-                    printf(RESET_TEXT);
-                    hajo_meret++;
-                    break;
-                }
-                if (x > 1 && irany == 0)
-                {
-                    for (int i = y - 1; i < y + hajo_meret + 1; i++)
+                    if (hajo_2_player_1->irany == 0)
                     {
-                        if (player[i].matrix[x][i] == 1)
+                        if (player->matrix[hajo_2_player_1->kezdopont[0] + i][hajo_2_player_1->kezdopont[1] + n] == 1)
                         {
-                            printf(RED_TEXT "Ide nem rakhatod mivel utkozne egy másik hajoval\n");
+                            printf(RED_TEXT "Utkozes tortent!\n");
                             printf(RESET_TEXT);
+                            utkozes = 1;
                         }
-                        hajo_meret++;
-                        break;
                     }
                 }
-                if (x < tabla_meret - 1 && irany == 0)
-                {
-                    for (int i = y - 1; i < y + hajo_meret + 1; i++)
-                    {
-                        if (player[i].matrix[x + 1][i] == 1)
-                        {
-                            printf(RED_TEXT "Ide nem rakhatod mivel utkozne egy másik hajoval\n");
-                            printf(RESET_TEXT);
-                        }
-                        hajo_meret++;
-                        break;
-                    }
-                }
-                if (irany == 0 && y > 1)
-                {
-                    if (player[i].matrix[x - 1][y] == 1 || player[i].matrix[x - 1][y + hajo_meret + 1] == 1 )
-                    {
-                            printf(RED_TEXT "Ide nem rakhatod mivel utkozne egy másik hajoval\n");
-                    }
-                    hajo_meret++;
-                    break;
-                }
-                
-
-                break;
+            }
+            if (utkozes = 0)
+            {
+                printf(GREEN_TEXT"Nem tortent utkozes.\n");
+                kilepes_2 = 1;
             }
         }
     }
