@@ -54,27 +54,27 @@ void hajo_helyvalasztas(players *player)
         while (kilepes_2 != 1)
         {
             hajo_2_player_1->kezdopont[0] = 0;
-            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
+            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[0] > tabla_meret)
             {
                 printf("X: ");
                 scanf("%d", &hajo_2_player_1->kezdopont[0]);
             }
             hajo_2_player_1->kezdopont[1] = 0;
-            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
+            while (hajo_2_player_1->kezdopont[1] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
             {
-                printf("X: ");
-                scanf("%d", &hajo_2_player_1->kezdopont[0]);
+                printf("Y: ");
+                scanf("%d", &hajo_2_player_1->kezdopont[1]);
             }
-            hajo_2_player_1->irany = 0;
-            while (hajo_1_player_1->irany < 0 || hajo_2_player_1->irany > 1)
+            hajo_2_player_1->irany = -1;
+            while (hajo_2_player_1->irany < 0 || hajo_2_player_1->irany > 1)
             {
                 printf("Irany: ");
                 scanf("%d", &hajo_2_player_1->irany);
-            }
+            } //edig jó a kód
             int utkozes = 0;
             for (int i = 0; i < 3; i++)
             {
-                for (int n = 0; i < hajo_2_player_1->meret_elet; i++)
+                for (int n = 0; i < hajo_2_player_1->meret_elet + 1; i++)
                 {
                     if (hajo_2_player_1->irany == 0)
                     {
@@ -87,9 +87,9 @@ void hajo_helyvalasztas(players *player)
                     }
                 }
             }
-            if (utkozes = 0)
+            if (utkozes == 0)
             {
-                printf(GREEN_TEXT"Nem tortent utkozes.\n");
+                printf(GREEN_TEXT "Nem tortent utkozes.\n");
                 kilepes_2 = 1;
             }
         }

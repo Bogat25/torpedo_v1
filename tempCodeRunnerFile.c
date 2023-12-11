@@ -1,0 +1,2 @@
+
+    int jatekban = 1;
