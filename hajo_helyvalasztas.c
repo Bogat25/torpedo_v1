@@ -5,94 +5,39 @@
 
 void hajo_helyvalasztas(players *player)
 {
-
-    hajok *hajo_1_player_1 = foglalas_hajok();
-    hajok *hajo_2_player_1 = foglalas_hajok();
-    hajok *hajo_3_player_1 = foglalas_hajok();
-    hajok *hajo_4_player_1 = foglalas_hajok();
-    hajok *hajo_5_player_1 = foglalas_hajok();
-
-    hajok *hajo_1_player_2 = foglalas_hajok();
-    hajok *hajo_2_player_2 = foglalas_hajok();
-    hajok *hajo_3_player_2 = foglalas_hajok();
-    hajok *hajo_4_player_2 = foglalas_hajok();
-    hajok *hajo_5_player_2 = foglalas_hajok();
-
-    hajo_1_player_1->meret_elet = 1;
-    hajo_1_player_2->meret_elet = 1;
-    hajo_2_player_1->meret_elet = 2;
-    hajo_2_player_2->meret_elet = 2;
-    hajo_3_player_1->meret_elet = 3;
-    hajo_3_player_2->meret_elet = 3;
-    hajo_4_player_1->meret_elet = 4;
-    hajo_4_player_2->meret_elet = 4;
-    hajo_5_player_1->meret_elet = 5;
-    hajo_5_player_2->meret_elet = 5;
-
-    int kilepes = 0;
-    printf("Kerem %s jatekos hajo kordinatait.\n");
-    while (kilepes != 1)
+    int player_kovetkezik = 1;
+    while (player_kovetkezik == 1)
     {
-        printf(YELLOW_TEXT "1 egysegnyi hajo.\n");
-        printf(RESET_TEXT);
-        hajo_1_player_1->kezdopont[0] = 0;
-        while (hajo_1_player_1->kezdopont[0] < 1 || hajo_1_player_1->kezdopont[1] > tabla_meret)
+        int pozicio_x = 0; // bal fentről számmolom
+        int pozicio_y = 0;
+        int hajo_meret = 5;
+        int megfelel = 0;
+        while (megfelel == 0)
         {
-            printf("X: ");
-            scanf("%d", &hajo_1_player_1->kezdopont[0]);
-        }
-        hajo_1_player_1->kezdopont[1] = 0;
-        while (hajo_1_player_1->kezdopont[1] < 1 || hajo_1_player_1->kezdopont[1] > tabla_meret)
-        {
-            printf("Y: ");
-            scanf("%d", &hajo_1_player_1->kezdopont[1]);
-        }
-        printf(CYAN_TEXT "\nA halyo beolvasasa sikeres volt.\n");
-        printf(RESET_TEXT);
+            printf("meret: %d", hajo_meret);
+            printf("\n");
+            printf("x: ");
+            scanf("%d", &pozicio_x);
+            printf("y: ");
+            scanf("%d", &pozicio_y);
 
-        int kilepes_2 = 0;
-        while (kilepes_2 != 1)
-        {
-            hajo_2_player_1->kezdopont[0] = 0;
-            while (hajo_2_player_1->kezdopont[0] < 1 || hajo_2_player_1->kezdopont[0] > tabla_meret)
+            for (int i = 0; i < hajo_meret + 2; i++)
             {
-                printf("X: ");
-                scanf("%d", &hajo_2_player_1->kezdopont[0]);
-            }
-            hajo_2_player_1->kezdopont[1] = 0;
-            while (hajo_2_player_1->kezdopont[1] < 1 || hajo_2_player_1->kezdopont[1] > tabla_meret)
-            {
-                printf("Y: ");
-                scanf("%d", &hajo_2_player_1->kezdopont[1]);
-            }
-            hajo_2_player_1->irany = -1;
-            while (hajo_2_player_1->irany < 0 || hajo_2_player_1->irany > 1)
-            {
-                printf("Irany: ");
-                scanf("%d", &hajo_2_player_1->irany);
-            } //edig jó a kód
-            int utkozes = 0;
-            for (int i = 0; i < 3; i++)
-            {
-                for (int n = 0; i < hajo_2_player_1->meret_elet + 1; i++)
+                for (int j = 0; j < 3; i++)
                 {
-                    if (hajo_2_player_1->irany == 0)
+                    if (player[0].matrix[pozicio_x - 1 + j][pozicio_y - 1 + i] != 0)
                     {
-                        if (player->matrix[hajo_2_player_1->kezdopont[0] + i][hajo_2_player_1->kezdopont[1] + n] == 1)
-                        {
-                            printf(RED_TEXT "Utkozes tortent!\n");
-                            printf(RESET_TEXT);
-                            utkozes = 1;
-                        }
+                        printf("Utkozes!!!!");
                     }
+                    
                 }
+                
             }
-            if (utkozes == 0)
-            {
-                printf(GREEN_TEXT "Nem tortent utkozes.\n");
-                kilepes_2 = 1;
-            }
+            
         }
+    }
+    while (player_kovetkezik == 2)
+    {
     }
 }
 
