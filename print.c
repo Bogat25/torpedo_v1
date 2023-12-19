@@ -43,16 +43,16 @@ void pr_tabla(players *player)
     printf("\n");
     for (int i = 1; i < tabla_meret + 1; i++)
     {
-        printf(YELLOW_TEXT "%d ", i + 1);
+        printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 1. player
         for (int n = 1; n < tabla_meret + 1; n++)
         {
             printf("%d ", player[0].matrix[i][n]);
         }
         pr_terkoz();
-        printf(YELLOW_TEXT "%d ", i + 1);
+        printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 2. player
-        for (int n = 1; n < tabla_meret + 1; n++)
+        for (int n = 1; n < tabla_meret +1; n++)
         {
             printf("%d ", player[1].matrix[i][n]);
         }

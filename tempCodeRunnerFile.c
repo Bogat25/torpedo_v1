@@ -1,2 +1,2 @@
 
-    int jatekban = 1;
+    break; //a teszt erejéig
