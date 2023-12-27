@@ -136,5 +136,36 @@ void pr_lehejezesek(players *player)
         printf("\n");
     }
 }
+void pr_adott_tabla(players player)
+{
+    printf(CYAN_TEXT "%s\n", player.nev);
+    printf(RESET_TEXT);
+    printf(" ");
+    for (int i = 0; i < tabla_meret; i++)
+    {
+        printf(YELLOW_TEXT "%d ", i + 1);
+        printf(RESET_TEXT);
+    }
+
+    printf("\n");
+    for (int i = 1; i < tabla_meret + 1; i++)
+    {
+        printf(YELLOW_TEXT "%d ", i);
+        printf(RESET_TEXT); // 1. player
+        for (int n = 1; n < tabla_meret + 1; n++)
+        {
+            if (player.matrix[i][n] != 0)
+            {
+                printf(CYAN_TEXT "%d ", player.matrix[i][n]);
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("%d ", player.matrix[i][n]);
+            }
+        }
+        printf("\n");
+    }
+}
 
 #endif

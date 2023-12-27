@@ -14,7 +14,7 @@ void hajo_helyvalasztas(players *player)
         for (int hanyadik_jatekos = 0; hanyadik_jatekos < db_jatekos; hanyadik_jatekos++)
         {
             system("cls");
-            printf(YELLOW_TEXT"%s Jatekos valaszt: ",player[0].nev); printf(RESET_TEXT"\n");
+            printf(YELLOW_TEXT"%s Jatekos valaszt: ",player[hanyadik_jatekos].nev); printf(RESET_TEXT"\n");
             for (int l = 1; l < 6; l++)
             {
                 hajo_meret = l;
@@ -95,7 +95,7 @@ void hajo_helyvalasztas(players *player)
                     }
                 }
                 megfelel = 0;
-                pr_tabla(player);
+                pr_adott_tabla(player[hanyadik_jatekos]);
             }
         }
     }

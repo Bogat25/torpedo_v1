@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include  <stdio.h>
+#include <stdio.h>
 #include <string.h> //strynghosszt szamol
 
 #include "defines.c"
@@ -9,20 +9,19 @@
 #include "print.c"
 #include "scan.c"
 #include "hajo_helyvalasztas.c"
+#include "hajo_loves.c"
 
-
-
-
-int main(){
-    players* player = foglalas_jatekosok();
+int main()
+{
+    players *player = foglalas_jatekosok();
     pr_start();
     sc_nevek(player);
-    int jatekban = 1;
-    while (jatekban == 1){
     hajo_helyvalasztas(player);
-    pr_tabla(player);
-    break; //a teszt erejéig
+    int jatekban = 1;
+    int input;
+    while (jatekban == 1)
+    {
+        input = sc_input();
     }
     felszabaditas_jatekosok(player);
 }
-
