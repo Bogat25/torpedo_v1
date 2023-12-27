@@ -40,6 +40,7 @@ void hajo_helyvalasztas(players *player)
                         {
                             if (player[hanyadik_jatekos].matrix[pozicio_x + j - 1][pozicio_y + i - 1] != 0)
                             {
+                                printf(RED_TEXT"Nem felel meg 1!!!");printf(RESET_TEXT);
                                 megfelel = 0;
                                 break;
                             }

@@ -64,7 +64,7 @@ void pr_lehejezesek(players *player)
 {
     printf("%s", player[0].nev);
     int nev_hossz = strlen(player[0].nev); // szoköz a playerek nevei között
-    for (int i = 0; i < tabla_meret + 2 * terkoz - nev_hossz; i++)
+    for (int i = 0; i < tabla_meret + 2 * terkoz - nev_hossz + 2; i++)
     {
         printf(" ");
     }
@@ -86,18 +86,18 @@ void pr_lehejezesek(players *player)
     }
 
     printf("\n");
-    for (int i = 1; i < tabla_meret + 2; i++)
+    for (int i = 0; i < tabla_meret + 2; i++)
     {
         printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 1. player
-        for (int n = 1; n < tabla_meret + 2; n++)
+        for (int n = 0; n < tabla_meret + 2; n++)
         {
             printf("%d ", player[0].matrix[i][n]);
         }
         pr_terkoz();
         printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 2. player
-        for (int n = 1; n < tabla_meret + 2; n++)
+        for (int n = 0; n < tabla_meret + 2; n++)
         {
             printf("%d ", player[1].matrix[i][n]);
         }
