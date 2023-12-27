@@ -17,7 +17,7 @@ int sc_input(){
     {
         printf(YELLOW_TEXT"Kerlek valassz a lehetosegek kozul.\n");
         printf(RED_TEXT"Kilepes: 0 ");printf(CYAN_TEXT"Tablak kiirasa: 1 ");printf(GREEN_TEXT"Szavazas: 2\n");printf(RESET_TEXT);
-        scanf("%d", input);
+        scanf("%d", &input);
     }
     
     return input;

@@ -167,5 +167,9 @@ void pr_adott_tabla(players player)
         printf("\n");
     }
 }
+void pr_elkoszones(){
+    printf(YELLOW_TEXT"Koszonom hogy a jatekommal jatszott.\n");
+    printf(CYAN_TEXT"Keszitette: Csani#3902");printf(RESET_TEXT);
+}
 
 #endif

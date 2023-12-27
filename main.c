@@ -22,6 +22,11 @@ int main()
     while (jatekban == 1)
     {
         input = sc_input();
+        if (input == 0)
+        {
+            pr_elkoszones();
+            return 0;
+        }
     }
     felszabaditas_jatekosok(player);
 }
