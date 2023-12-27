@@ -140,7 +140,7 @@ void pr_adott_tabla(players player)
 {
     printf(CYAN_TEXT "%s\n", player.nev);
     printf(RESET_TEXT);
-    printf(" ");
+    printf("  ");
     for (int i = 0; i < tabla_meret; i++)
     {
         printf(YELLOW_TEXT "%d ", i + 1);
@@ -171,5 +171,8 @@ void pr_elkoszones(){
     printf(YELLOW_TEXT"Koszonom hogy a jatekommal jatszott.\n");
     printf(CYAN_TEXT"Keszitette: Csani#3902");printf(RESET_TEXT);
 }
-
+void pr_nyertes(players player){
+    printf(YELLOW_TEXT"A nyertes: "); printf(CYAN_TEXT"%s\n",player.nev);
+    pr_elkoszones();    
+}
 #endif

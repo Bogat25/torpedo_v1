@@ -19,6 +19,7 @@ int main()
     hajo_helyvalasztas(player);
     int jatekban = 1;
     int input;
+    int nyertes = -1;
     while (jatekban == 1)
     {
         input = sc_input();
@@ -27,6 +28,17 @@ int main()
             pr_elkoszones();
             return 0;
         }
+        if (input == 1)
+        {
+            pr_tabla(player);
+        }
+        if (input == 2)
+        {
+            nyertes = hajo_loves(player);
+            pr_nyertes(player[nyertes]);
+            return 0;
+        }
+        
     }
     felszabaditas_jatekosok(player);
 }
