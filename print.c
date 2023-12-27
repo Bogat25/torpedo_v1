@@ -29,14 +29,14 @@ void pr_tabla(players *player)
     printf("  "); // 1. player
     for (int i = 0; i < tabla_meret; i++)
     {
-        printf(CYAN_TEXT "%d ", i + 1);
+        printf(YELLOW_TEXT "%d ", i + 1);
         printf(RESET_TEXT);
     }
     pr_terkoz();
     printf("  "); // 2. player
     for (int i = 0; i < tabla_meret; i++)
     {
-        printf(CYAN_TEXT "%d ", i + 1);
+        printf(YELLOW_TEXT "%d ", i + 1);
         printf(RESET_TEXT);
     }
 
@@ -47,14 +47,30 @@ void pr_tabla(players *player)
         printf(RESET_TEXT); // 1. player
         for (int n = 1; n < tabla_meret + 1; n++)
         {
-            printf("%d ", player[0].matrix[i][n]);
+            if (player[0].matrix[i][n] != 0)
+            {
+                printf(CYAN_TEXT "%d ", player[0].matrix[i][n]);
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("%d ", player[0].matrix[i][n]);
+            }
         }
         pr_terkoz();
         printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 2. player
         for (int n = 1; n < tabla_meret + 1; n++)
         {
-            printf("%d ", player[1].matrix[i][n]);
+            if (player[0].matrix[i][n] != 0)
+            {
+                printf(CYAN_TEXT "%d ", player[0].matrix[i][n]);
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("%d ", player[0].matrix[i][n]);
+            }
         }
         printf("\n");
     }
@@ -92,14 +108,30 @@ void pr_lehejezesek(players *player)
         printf(RESET_TEXT); // 1. player
         for (int n = 0; n < tabla_meret + 2; n++)
         {
-            printf("%d ", player[0].matrix[i][n]);
+            if (player[0].matrix[i][n] != 0)
+            {
+                printf(CYAN_TEXT "%d ", player[0].matrix[i][n]);
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("%d ", player[0].matrix[i][n]);
+            }
         }
         pr_terkoz();
         printf(YELLOW_TEXT "%d ", i);
         printf(RESET_TEXT); // 2. player
         for (int n = 0; n < tabla_meret + 2; n++)
         {
-            printf("%d ", player[1].matrix[i][n]);
+            if (player[0].matrix[i][n] != 0)
+            {
+                printf(CYAN_TEXT "%d ", player[0].matrix[i][n]);
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("%d ", player[0].matrix[i][n]);
+            }
         }
         printf("\n");
     }

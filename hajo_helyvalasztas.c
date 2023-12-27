@@ -11,8 +11,6 @@ void hajo_helyvalasztas(players *player)
     int irany = 0; // 0 => visszintes, 1 => föggőleges
     int hajo_meret = 5;
     int megfelel = 0;
-    while (megfelel == 0)
-    {
         for (int hanyadik_jatekos = 0; hanyadik_jatekos < db_jatekos; hanyadik_jatekos++)
         {
             system("cls");
@@ -101,6 +99,5 @@ void hajo_helyvalasztas(players *player)
             }
         }
     }
-}
 
 #endif

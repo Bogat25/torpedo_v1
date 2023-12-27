@@ -19,8 +19,6 @@ int main(){
     sc_nevek(player);
     int jatekban = 1;
     while (jatekban == 1){
-    player[1].matrix[9][9] = 9; //teszt
-    //player[0].matrix[7][7] = 1;
     hajo_helyvalasztas(player);
     pr_tabla(player);
     break; //a teszt erejéig
