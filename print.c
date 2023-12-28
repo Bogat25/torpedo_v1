@@ -169,8 +169,6 @@ void pr_adott_tabla(players player)
 }
 void pr_ellenfel_allasa(players player)
 {
-    printf(CYAN_TEXT "%s\n", player.nev);
-    printf(RESET_TEXT);
     printf("  ");
     for (int i = 0; i < tabla_meret; i++)
     {

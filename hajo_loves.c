@@ -32,12 +32,12 @@ int hajo_loves(players *player)
             {
                 if (varakozas != -1)
                 {
-                    printf(CYAN_TEXT"A kovetkezo kor inditasahoz irjon be valamit: ");printf(RESET_TEXT);
+                    printf(YELLOW_TEXT"A kovetkezo kor inditasahoz irjon be valamit: ");printf(RESET_TEXT);
                     scanf("%d", &varakozas);
                 }
                 varakozas = 1;
                 system("cls");
-                printf("Ellenfeled jelenlegi allasa\n");
+                printf("Ellenfeled jelenlegi allasa\n\n");
                 pr_ellenfel_allasa(player[hanyadik_jatekos_ellenfel]);
                 printf("x:");
                 scanf("%d", &loves_x);
