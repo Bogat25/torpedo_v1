@@ -167,6 +167,37 @@ void pr_adott_tabla(players player)
         printf("\n");
     }
 }
+void pr_ellenfel_allasa(players player)
+{
+    printf(CYAN_TEXT "%s\n", player.nev);
+    printf(RESET_TEXT);
+    printf("  ");
+    for (int i = 0; i < tabla_meret; i++)
+    {
+        printf(YELLOW_TEXT "%d ", i + 1);
+        printf(RESET_TEXT);
+    }
+
+    printf("\n");
+    for (int i = 1; i < tabla_meret + 1; i++)
+    {
+        printf(YELLOW_TEXT "%d ", i);
+        printf(RESET_TEXT); // 1. player
+        for (int n = 1; n < tabla_meret + 1; n++)
+        {
+            if (player.matrix[i][n] == 9)
+            {
+                printf(CYAN_TEXT "X ");
+                printf(RESET_TEXT);
+            }
+            else
+            {
+                printf("0 ");
+            }
+        }
+        printf("\n");
+    }
+}
 void pr_elkoszones(){
     printf(YELLOW_TEXT"Koszonom hogy a jatekommal jatszott.\n");
     printf(CYAN_TEXT"Keszitette: Csani#3902");printf(RESET_TEXT);

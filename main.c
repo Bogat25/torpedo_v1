@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <string.h> //strynghosszt szamol
+#include <string.h> // ez számolja meg a char hosszát
 
 #include "defines.c"
 #include "structs.c"

@@ -12,6 +12,7 @@ int hajo_loves(players *player)
     int hajo_fajta = 0;
     int db_nem_elsujedt_egyseg;
     int hanyadik_jatekos_ellenfel;
+    int varakozas = -1;
     while (jatekban == 1)
     {
         for (int hanyadik_jatekos = 0; hanyadik_jatekos < db_jatekos; hanyadik_jatekos++)
@@ -27,16 +28,23 @@ int hajo_loves(players *player)
             {
                 hanyadik_jatekos_ellenfel = 0;
             }
-
             while (loves_x < 1 || loves_x > tabla_meret || loves_y < 1 || loves_y > tabla_meret)
             {
+                if (varakozas != -1)
+                {
+                    printf(CYAN_TEXT"A kovetkezo kor inditasahoz irjon be valamit: ");printf(RESET_TEXT);
+                    scanf("%d", &varakozas);
+                }
+                varakozas = 1;
+                system("cls");
+                printf("Ellenfeled jelenlegi allasa\n");
+                pr_ellenfel_allasa(player[hanyadik_jatekos_ellenfel]);
                 printf("x:");
                 scanf("%d", &loves_x);
-                printf("\ny:");
+                printf("y:");
                 scanf("%d", &loves_y);
                 printf("\n");
             }
-            system("cls");
             talalt = 0;
             if (player[hanyadik_jatekos_ellenfel].matrix[loves_x][loves_y] != 0 && player[hanyadik_jatekos_ellenfel].matrix[loves_x][loves_y] != 9)
             {
