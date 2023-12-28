@@ -32,17 +32,33 @@ int hajo_loves(players *player)
             {
                 if (varakozas != -1)
                 {
-                    printf(YELLOW_TEXT"A kovetkezo kor inditasahoz irjon be valamit: ");printf(RESET_TEXT);
-                    scanf("%d", &varakozas);
+                    printf(YELLOW_TEXT "A kovetkezo kor inditasahoz irjon be egy szamot: ");
+                    while (scanf("%d", &varakozas) != 1)
+                    {
+                        printf(YELLOW_TEXT "A kovetkezo kor inditasahoz irjon be egy szamot: ");
+                        while (getchar() != '\n')
+                            ;
+                    }
+                    printf(RESET_TEXT);
                 }
                 varakozas = 1;
                 system("cls");
                 printf("Ellenfeled jelenlegi allasa\n\n");
                 pr_ellenfel_allasa(player[hanyadik_jatekos_ellenfel]);
                 printf("x:");
-                scanf("%d", &loves_x);
+                while (scanf("%d", &loves_x) != 1 || loves_x < 0 || loves_x > 8)
+                {
+                    printf("Hibas bemenet! Irany, x: ");
+                    while (getchar() != '\n')
+                        ;
+                }
                 printf("y:");
-                scanf("%d", &loves_y);
+                while (scanf("%d", &loves_y) != 1 || loves_y < 0 || loves_y > 8)
+                {
+                    printf("Hibas bemenet! Irany, y: ");
+                    while (getchar() != '\n')
+                        ;
+                }
                 printf("\n");
             }
             talalt = 0;
