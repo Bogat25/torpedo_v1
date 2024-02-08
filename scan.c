@@ -25,7 +25,7 @@ int sc_input()
         printf(RESET_TEXT);
         while (scanf("%d", &input) != 1)
         {
-            printf(RED_TEXT "Hibas bemenet.");
+            printf(RED_TEXT "Hibas bemenet.\n");
             printf(RESET_TEXT);
             while (getchar() != '\n')
                 ;
